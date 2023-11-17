@@ -1,4 +1,4 @@
-package sol_2;
+package sol2;
 
 public class CricketData {
     int runs, wickets;

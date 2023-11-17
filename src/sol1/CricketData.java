@@ -1,37 +1,30 @@
 package sol1;
 
 
+import java.util.HashMap;
+
 public class CricketData {
-    int runs, wickets;
-    float overs;
 
+    HashMap<Integer, Integer> data = new HashMap<Integer, Integer>();
 
-    private int getLatestRuns(){
-        return 90;
+    private HashMap getData(){
+        return data;
     }
 
-    private int getLatestWickets(){
-        return 2;
+    public void lineChartDisplay(HashMap data){
+        //do something
+        System.out.println("line chart");
     }
 
-    private float getLatestOvers(){
-        return (float) 10.2;
-    }
-
-    public void currentScoreDisplay(int runs, int wickets, float overs){
-        System.out.println("\nCurrent Score Display: \n" + "Runs: " + runs + "\nWickets:" + wickets + "\nOvers: " + overs);
-    }
-
-    public void averageScoreDisplay(int runs, float overs){
-        System.out.println("\nAverage Score Display:\n" + "Run Rate: " + runs/overs + "\nPredictedScore: " + (runs/overs)*50);
+    public void barChartDisplay(HashMap data){
+        //do something
+        System.out.println("bar chart");
     }
 
     public void dataChanged(){
-        runs = getLatestRuns();
-        wickets = getLatestWickets();
-        overs = getLatestOvers();
+        data = getData();
 
-        currentScoreDisplay(runs, wickets, overs);
-        averageScoreDisplay(runs, overs);
+        lineChartDisplay(data);
+        barChartDisplay(data);
     }
 }
