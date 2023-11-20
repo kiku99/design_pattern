@@ -1,11 +1,9 @@
 package sol1;
-
-
 import java.util.HashMap;
 
-public class CricketData {
+public class StockData {
 
-    HashMap<Integer, Integer> data = new HashMap<Integer, Integer>();
+    HashMap<String, Integer> data = new HashMap<String, Integer>();
 
     private HashMap getData(){
         return data;
@@ -23,7 +21,6 @@ public class CricketData {
 
     public void dataChanged(){
         data = getData();
-
         lineChartDisplay(data);
         barChartDisplay(data);
     }

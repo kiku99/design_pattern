@@ -2,15 +2,15 @@ package sol3;
 
 public class Main {
     public static void main(String[] args) {
-        AverageScoreDisplay averageScoreDisplay = new AverageScoreDisplay();
-        CurrentScoreDisplay currentScoreDisplay = new CurrentScoreDisplay();
-        CricketData cricketData = new CricketData();
+        LineChartDisplay lineChartDisplay = new LineChartDisplay();
+        BarChartDisplay barChartDisplay = new BarChartDisplay();
+        StockData stockData = new StockData();
 
-        cricketData.registerObserver(averageScoreDisplay);
-        cricketData.registerObserver(currentScoreDisplay);
+        stockData.registerObserver(lineChartDisplay);
+        stockData.registerObserver(barChartDisplay);
 
-        cricketData.unregisterObserver(averageScoreDisplay);
+        stockData.unregisterObserver(lineChartDisplay);
 
-        cricketData.dataChanged();
+        stockData.dataChanged();
     }
 }

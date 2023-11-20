@@ -1,12 +1,12 @@
 package sol3;
 import java.util.ArrayList;
+import java.util.HashMap;
 
-public class CricketData implements Subject{
-    int runs, wickets;
-    float overs;
+public class StockData implements Subject{
+    HashMap<Integer, Integer> data = new HashMap<Integer, Integer>();
     ArrayList<Observer> observerList;
 
-    public CricketData(){
+    public StockData(){
         observerList = new ArrayList<Observer>();
     }
 
@@ -23,27 +23,16 @@ public class CricketData implements Subject{
     @Override
     public void notifyObservers() {
         for (Observer o : observerList) {
-            o.update(runs, wickets, overs);
+            o.update(data);
         }
     }
 
-    private int getLatestRuns(){
-        return 90;
-    }
-
-    private int getLatestWickets(){
-        return 2;
-    }
-
-    private float getLatestOvers(){
-        return (float) 10.2;
+    private HashMap getData(){
+        return data;
     }
 
     public void dataChanged(){
-        runs = getLatestRuns();
-        wickets = getLatestWickets();
-        overs = getLatestOvers();
-
+        data = getData();
         notifyObservers();
     }
 }
