@@ -1,6 +1,6 @@
 package sol3;
 
-public class Main {
+public class Client {
     public static void main(String[] args) {
         LineChartDisplay lineChartDisplay = new LineChartDisplay();
         BarChartDisplay barChartDisplay = new BarChartDisplay();
@@ -11,6 +11,8 @@ public class Main {
 
         stockData.unregisterObserver(lineChartDisplay);
 
-        stockData.dataChanged();
+        while (true){
+            stockData.dataChanged();
+        }
     }
 }

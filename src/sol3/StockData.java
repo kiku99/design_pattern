@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class StockData implements Subject{
-    HashMap<Integer, Integer> data = new HashMap<Integer, Integer>();
+    HashMap<String, Integer> data = new HashMap<String, Integer>();
     ArrayList<Observer> observerList;
 
     public StockData(){

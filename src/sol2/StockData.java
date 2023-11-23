@@ -3,7 +3,7 @@ package sol2;
 import java.util.HashMap;
 
 public class StockData {
-    HashMap<Integer, Integer> data = new HashMap<Integer, Integer>();
+    HashMap<String, Integer> data = new HashMap<String, Integer>();
     BarChartDisplay barChartDisplay;
     LineChartDisplay lineChartDisplay;
 
