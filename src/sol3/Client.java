@@ -1,18 +1,23 @@
 package sol3;
 
+import java.util.Scanner;
+
 public class Client {
     public static void main(String[] args) {
-        LineChartDisplay lineChartDisplay = new LineChartDisplay();
-        BarChartDisplay barChartDisplay = new BarChartDisplay();
-        StockData stockData = new StockData();
+        TAIUpdate TAIUpdate = new TAIUpdate();
+        CandleChartUpdate candleChartUpdate = new CandleChartUpdate();
+        Observable stockData = new Observable();
+        Scanner in = new Scanner(System.in);
 
-        stockData.registerObserver(lineChartDisplay);
-        stockData.registerObserver(barChartDisplay);
+        stockData.registerObserver(TAIUpdate);
+        stockData.registerObserver(candleChartUpdate);
 
-        stockData.unregisterObserver(lineChartDisplay);
+        stockData.unregisterObserver(TAIUpdate);
 
         while (true){
-            stockData.dataChanged();
+            // example of getting data
+            String OHLC = in.next();
+            stockData.receiveData(OHLC);
         }
     }
 }

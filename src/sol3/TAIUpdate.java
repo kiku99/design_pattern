@@ -1,8 +1,8 @@
-package sol2;
+package sol3;
 
 import java.util.HashMap;
 
-public class CandleChartUpdate {
+public class TAIUpdate implements Observer{
     String data;
 
     public void update(String data){
@@ -11,7 +11,7 @@ public class CandleChartUpdate {
     }
 
     public void display(String data){
-        //do something
-        System.out.println("Candle Chart");
+        // do something
+        System.out.println("Technical Analysis Indicator");
     }
 }

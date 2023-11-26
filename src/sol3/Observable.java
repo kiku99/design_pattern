@@ -1,12 +1,10 @@
 package sol3;
 import java.util.ArrayList;
-import java.util.HashMap;
 
-public class StockData implements Subject{
-    HashMap<String, Integer> data = new HashMap<String, Integer>();
+public class Observable implements Subject{
     ArrayList<Observer> observerList;
 
-    public StockData(){
+    public Observable(){
         observerList = new ArrayList<Observer>();
     }
 
@@ -21,18 +19,13 @@ public class StockData implements Subject{
     }
 
     @Override
-    public void notifyObservers() {
+    public void notifyObservers(String data) {
         for (Observer o : observerList) {
             o.update(data);
         }
     }
 
-    private HashMap getData(){
-        return data;
-    }
-
-    public void dataChanged(){
-        data = getData();
-        notifyObservers();
+    public void receiveData(String data){
+        notifyObservers(data);
     }
 }

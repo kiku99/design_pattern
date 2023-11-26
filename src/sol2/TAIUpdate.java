@@ -7,10 +7,10 @@ public class TAIUpdate {
 
     public void update(String data){
         this.data = data;
-        display();
+        display(this.data);
     }
 
-    public void display(){
+    public void display(String data){
         //do something
         System.out.println("Technical Analysis Indicator");
     }
