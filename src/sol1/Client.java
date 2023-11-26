@@ -1,6 +1,5 @@
 package sol1;
 
-import java.util.HashMap;
 import java.util.Scanner;
 
 public class Client {

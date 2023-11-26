@@ -1,7 +1,5 @@
 package sol3;
 
-import java.util.HashMap;
-
 public class CandleChartUpdate implements Observer{
     String data;
 

@@ -1,7 +1,5 @@
 package sol2;
 
-import java.util.HashMap;
-
 public class CandleChartUpdate {
     String data;
 

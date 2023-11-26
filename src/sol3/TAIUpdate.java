@@ -1,7 +1,5 @@
 package sol3;
 
-import java.util.HashMap;
-
 public class TAIUpdate implements Observer{
     String data;
 

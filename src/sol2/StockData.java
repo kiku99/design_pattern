@@ -1,7 +1,5 @@
 package sol2;
 
-import java.util.HashMap;
-
 public class StockData {
     CandleChartUpdate candleChartUpdate;
     TAIUpdate TAIUpdate;
