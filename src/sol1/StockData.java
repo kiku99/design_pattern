@@ -1,27 +1,19 @@
 package sol1;
-import java.util.HashMap;
 
 public class StockData {
 
-    HashMap<String, Integer> data = new HashMap<String, Integer>();
-
-    private HashMap getData(){
-        return data;
-    }
-
-    public void lineChartDisplay(HashMap data){
+    public void CandleChartUpdate(String data){
         //do something
-        System.out.println("line chart");
+        System.out.println("Candle Chart");
     }
 
-    public void barChartDisplay(HashMap data){
+    public void TAIUpdate(String data){
         //do something
-        System.out.println("bar chart");
+        System.out.println("Technical Analysis Indicator");
     }
 
-    public void dataChanged(){
-        data = getData();
-        lineChartDisplay(data);
-        barChartDisplay(data);
+    public void receiveData(String data){
+        CandleChartUpdate(data);
+        TAIUpdate(data);
     }
 }
