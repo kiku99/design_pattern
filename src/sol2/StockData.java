@@ -3,22 +3,16 @@ package sol2;
 import java.util.HashMap;
 
 public class StockData {
-    HashMap<String, Integer> data = new HashMap<String, Integer>();
-    BarChartDisplay barChartDisplay;
-    LineChartDisplay lineChartDisplay;
+    CandleChartUpdate candleChartUpdate;
+    TAIUpdate TAIUpdate;
 
-    public StockData(BarChartDisplay barChartDisplay, LineChartDisplay lineChartDisplay){
-        this.barChartDisplay = barChartDisplay;
-        this.lineChartDisplay = lineChartDisplay;
+    public StockData(CandleChartUpdate candleChartUpdate, TAIUpdate TAIUpdate){
+        this.candleChartUpdate = candleChartUpdate;
+        this.TAIUpdate = TAIUpdate;
     }
 
-    private HashMap getData(){
-        return data;
-    }
-
-    public void dataChanged(){
-        data = getData();
-        barChartDisplay.update(data);
-        lineChartDisplay.update(data);
+    public void receiveData(String data){
+        candleChartUpdate.update(data);
+        TAIUpdate.update(data);
     }
 }

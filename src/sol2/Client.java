@@ -1,13 +1,18 @@
 package sol2;
 
+import java.util.Scanner;
+
 public class Client {
     public static void main(String[] args) {
-        LineChartDisplay lineChartDisplay = new LineChartDisplay();
-        BarChartDisplay barChartDisplay = new BarChartDisplay();
-        StockData stockData = new StockData(barChartDisplay, lineChartDisplay);
+        TAIUpdate TAIUpdate = new TAIUpdate();
+        CandleChartUpdate candleChartUpdate = new CandleChartUpdate();
+        StockData stockData = new StockData(candleChartUpdate, TAIUpdate);
+        Scanner in =  new Scanner(System.in);
 
         while (true){
-            stockData.dataChanged();
+            // example of getting data
+            String OHLC = in.next();
+            stockData.receiveData(OHLC);
         }
     }
 }
